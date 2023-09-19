@@ -1,0 +1,41 @@
+.section {
+  background-image: url("/images/hero.jpg");
+  background-size: cover;
+}
+
+.hero {
+  padding-block: 30px 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 40px;
+}
+
+.title {
+  width: 180px;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-back-primary);
+}
+
+.description {
+  width: 260px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-back-primary);
+}
+
+.ctaBtn {
+  padding-inline: 25px;
+  color: var(--color-back-primary);
+  background-color: var(--color-primary);
+}
+
+@media (width >= 420px) {
+  .section {
+    background-image: url("/images/hero.jpg");
+    background-size: contain;
+    background-position-x: -250px;
+  }
+}
