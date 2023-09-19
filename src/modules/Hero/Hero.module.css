@@ -36,6 +36,6 @@
   .section {
     background-image: url("/images/hero.jpg");
     background-size: contain;
-    background-position-x: -250px;
+    background-position-x: 52%;
   }
 }
