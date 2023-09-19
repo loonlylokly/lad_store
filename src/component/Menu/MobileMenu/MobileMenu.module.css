@@ -1,0 +1,30 @@
+.wrapper {
+  padding-top: 100px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 80px;
+  display: none;
+}
+
+.list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  row-gap: 32px;
+}
+
+.link {
+  font-weight: 600;
+}
+
+@media (width >= 540px) {
+  .menu {
+    display: none;
+  }
+}
