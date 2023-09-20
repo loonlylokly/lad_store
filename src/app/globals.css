@@ -70,7 +70,7 @@ section {
 
 @media (width >= 1200px) {
   section {
-    padding-inline: 160px;
+    padding-inline: 120px;
   }
 }
 
@@ -99,12 +99,12 @@ section {
 }
 
 .btn:hover {
-  background-color: var(--color-secondary);
+  background-color: var(--color-back-primary);
+  color: var(--color-text-primary);
   transition: .4s;
   text-decoration: none;
 }
 
 .btnSecondary {
-  border: 2px solid var(--color-text-primary);
   transition: .4s;
 }

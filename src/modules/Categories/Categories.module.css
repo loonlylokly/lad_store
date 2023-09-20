@@ -1,0 +1,74 @@
+.categories {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+  grid-auto-rows: 200px;
+  grid-auto-columns: 100px;
+  grid-auto-flow: dense;
+}
+
+.clothes,
+.dishes,
+.souvenirs {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 28px;
+  background-image: url('/images/clothes.jpg');
+  background-size: cover;
+  grid-column: span 2;
+}
+
+.dishes {
+  background-image: url('/images/bottle.jpg');
+}
+
+.souvenirs {
+  background-image: url('/images/notebook4.jpg');
+}
+
+.name {
+  padding-inline: 25px;
+  border-radius: 4px 0 0 4px;
+}
+
+.name:hover {
+  color: var(--color-back-primary);
+  background-color: var(--color-primary);
+}
+
+.clothes:hover,
+.dishes:hover,
+.souvenirs:hover {
+  text-decoration: none;
+}
+
+@media (width >= 480px) {
+  .clothes {
+    grid-row: span 2;
+    background-position: center;
+  }
+
+  .dishes,
+  .souvenirs {
+    grid-column: span 1;
+    background-position: center;
+  }
+}
+
+@media (width >= 680px) {
+  .souvenirs,
+  .dishes {
+    grid-row: span 1;
+    grid-column: span 2;
+  }
+}
+
+@media (width >= 1100px) {
+  .clothes,
+  .souvenirs,
+  .dishes {
+    grid-row: span 2;
+    grid-column: span 1;
+  }
+}
