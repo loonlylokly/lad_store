@@ -7,6 +7,12 @@
   grid-auto-flow: dense;
 }
 
+.title {
+  width: 100%;
+  padding-block: 20px 15px;
+  text-align: center;
+}
+
 .clothes,
 .dishes,
 .souvenirs {
@@ -29,7 +35,6 @@
 
 .name {
   padding-inline: 25px;
-  border-radius: 4px 0 0 4px;
 }
 
 .name:hover {

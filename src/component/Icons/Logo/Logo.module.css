@@ -1,0 +1,17 @@
+.logo:hover {
+  text-decoration: none;
+}
+
+.lad {
+  padding: 10px 0 0;
+  font-size: 3rem;
+  line-height: 30%;
+}
+
+.line {
+  display: inline-block;
+  width: 8px;
+  line-height: 0%;
+  font-size: 1rem;
+  border-bottom: 3px solid var(--color-primary);
+}
