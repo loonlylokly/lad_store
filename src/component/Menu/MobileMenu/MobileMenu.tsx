@@ -10,7 +10,7 @@ export default function MobileMenu() {
             <Link className={styles.link} href="/">Главная</Link>
           </li>
           <li className={styles.item}>
-            <Link className={styles.link} href="/">Товары</Link>
+            <Link className={styles.link} href="/catalog">Каталог</Link>
           </li>
           <li className={styles.item}>
             <Link className={styles.link} href="/">Контакты</Link>
