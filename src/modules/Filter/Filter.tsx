@@ -1,6 +1,7 @@
 import List from "@/component/Lists/List/List";
 import FilterCard from "@/component/Cards/FilterCard/FilterCard";
 import styles from "./Filter.module.css";
+import Image from "next/image";
 
 const list = ['Все', 'Футболки', 'Посуда', 'Кружки', 'Блокноты', 'Ручки', 'Кепки']
 
@@ -8,11 +9,13 @@ export default function Filter() {
   return (
     <div className={styles.filter}>
       <div className={styles.filterBtn}>
-        {/* <Image 
+        <Image
           className={styles.icon}
-          src=""
-          alt=""
-        /> */}
+          src="/icons/filters.svg"
+          alt="filters"
+          width={16}
+          height={16}
+        />
         Фильтр
       </div>
       <List

@@ -1,0 +1,8 @@
+.products {
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+  justify-content: center;
+  grid-auto-flow: dense;
+  row-gap: 10px;
+}

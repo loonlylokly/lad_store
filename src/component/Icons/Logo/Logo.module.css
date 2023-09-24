@@ -2,6 +2,10 @@
   text-decoration: none;
 }
 
+.logo {
+  user-select: none;
+}
+
 .lad {
   padding: 10px 0 0;
   font-size: 3rem;
