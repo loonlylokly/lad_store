@@ -11,7 +11,7 @@ export default function Header() {
       <header className={styles.header}>
         <Logo />
         <DesktopMenu />
-        <Link className={`${styles.loginBtn} btn btnSecondary`} href="/login">Войти</Link>
+        <Link className={`${styles.loginBtn} btn btnSecondary`} href="/">Войти</Link>
         <Hamburger />
       </header>
       <MobileMenu />

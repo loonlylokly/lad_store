@@ -17,7 +17,7 @@ export default function MobileMenu() {
           </li>
         </ul>
       </nav>
-      <Link className={`${styles.loginBtn} btn btnSecondary`} href="/login">Войти</Link>
+      <Link className={`${styles.loginBtn} btn btnSecondary`} href="/">Войти</Link>
     </div>
   )
 }

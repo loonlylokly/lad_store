@@ -11,7 +11,7 @@ export default function ProductCard({card}: Props) {
     <div className={styles.card}>
       <Image 
         className={styles.image}
-        src={card.image}
+        src={card.thubnail_url}
         alt={card.name}
         width={130}
         height={130}

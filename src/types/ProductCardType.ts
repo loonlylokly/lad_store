@@ -1,8 +1,11 @@
 type ProductCardType = {
-  id: string;
-  image: string,
+  _id: string,
   name: string,
-  price: string,
+  description: string,
+  thubnail_url: string,
+  images_urls: string[],
+  categories: string[],
+  price: number,
 };
 
 export default ProductCardType;
