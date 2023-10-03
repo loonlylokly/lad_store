@@ -1,30 +1,25 @@
 import List from "@/component/Lists/List/List";
 import FilterCard from "@/component/Cards/FilterCard/FilterCard";
+import BtnFilter from "@/component/Buttons/BtnFilter/BtnFilter";
 import styles from "./Filter.module.css";
-import Image from "next/image";
+import FilterForm from "@/component/Forms/FilterForm/FilterForm";
 
 const list = ['Все', 'Футболки', 'Посуда', 'Кружки', 'Блокноты', 'Ручки', 'Кепки']
 
 export default function Filter() {
   return (
-    <div className={styles.filter}>
-      <div className={styles.filterBtn}>
-        <Image
-          className={styles.icon}
-          src="/icons/filters.svg"
-          alt="filters"
-          width={16}
-          height={16}
+    <>
+      <div className={styles.filter}>
+        <BtnFilter />
+        <List
+          classNameList={styles.filterList}
+          items={list}
+          renderItem={(filterName: string) => (
+            <FilterCard name={filterName} />
+          )}
         />
-        Фильтр
       </div>
-      <List
-        classNameList={styles.filterList}
-        items={list}
-        renderItem={(filterName: string) => (
-          <FilterCard name={filterName} />
-        )}
-      />
-    </div>
+      <FilterForm />
+    </>
   )
 }

@@ -1,6 +1,5 @@
-import Product from "@/models/product";
+import Product from "@/modelsDB/product";
 import connectMongoDB from "./mongodb";
-import { NextResponse } from "next/server";
 
 export async function getAllProducts() {
   await connectMongoDB();
