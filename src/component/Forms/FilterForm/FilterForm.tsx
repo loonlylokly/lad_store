@@ -1,6 +1,6 @@
 "use client"
 
-import { useAppSelector } from "@/store/hooks/redux";
+import { useAppSelector } from "@/store/store";
 import styles from "./FilterForm.module.css";
 
 export default function FilterForm() {
@@ -33,12 +33,12 @@ export default function FilterForm() {
         min={0}
         max={100000}
         required />
-      <label id="checkbox-name">Наличие</label>
+      <label htmlFor="available">Наличие</label>
       <input
+        type="checkbox"
         id="available"
         name="available"
-        type="checkbox"
-        checked />
+        value="available" />
     </form>
   )
 }

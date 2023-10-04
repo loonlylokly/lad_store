@@ -1,9 +1,9 @@
 "use client"
 
 import Image from "next/image";
+import { filterSlice } from "@/store/reducers/FilterSlice";
+import { useAppDispatch } from "@/store/store";
 import styles from "./BtnFilter.module.css";
-import { useAppDispatch } from "@/store/hooks/redux";
-import { filterSlice } from "@/store/reducer/FilterSlice";
 
 export default function BtnFilter() {
   const dispatch = useAppDispatch();

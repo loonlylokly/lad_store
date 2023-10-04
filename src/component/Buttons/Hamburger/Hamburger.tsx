@@ -1,9 +1,9 @@
 "use client"
 
 import Image from "next/image";
+import { menuSlice } from "@/store/reducers/MenuSlice";
+import { useAppDispatch } from "@/store/store";
 import styles from "./Hamburger.module.css";
-import { menuSlice } from "@/store/reducer/MenuSlice";
-import { useAppDispatch } from "@/store/hooks/redux";
 
 export default function Hamburger ({width=36, height=36}) {
   const {toggle} = menuSlice.actions;

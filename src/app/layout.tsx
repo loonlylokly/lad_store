@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <StoreProvider>
-      <html lang="en">
+    <html lang="en">
+      <StoreProvider>
         <body className={inter.className}>
           <Header />
           <main className="main">
@@ -27,7 +27,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </body>
-      </html>
-    </StoreProvider>
+      </StoreProvider>
+    </html>
   )
 }

@@ -1,16 +1,18 @@
+"use client"
+
 import ProductCard from "@/component/Cards/ProductCard/ProductCard";
-import ProductCardType from "@/types/ProductCardType";
+import { productsApi } from "@/store/api/productsApi";
 
 type Props = {
-  classNameList: string,
-  list: ProductCardType[]
+  classNameList: string
 }
 
 export default function ProductsList(props: Props) {
+  const {data} = productsApi.useFetchAllProductsQuery('');
+  const list = data?.products
   return (
     <div className={props.classNameList}>
-      {props.list.map((item, index) => {
-        console.log(item.categories);
+      {list && list.map((item, index) => {
         if (item.categories.includes("clothes")){
           return <ProductCard key={item._id} card={item} />;
         }

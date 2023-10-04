@@ -1,9 +1,9 @@
 "use client"
 
 import Link from "next/link";
+import { useAppDispatch, useAppSelector } from "@/store/store";
+import { menuSlice } from "@/store/reducers/MenuSlice";
 import styles from "./MobileMenu.module.css";
-import { useAppDispatch, useAppSelector } from "@/store/hooks/redux";
-import { menuSlice } from "@/store/reducer/MenuSlice";
 
 export default function MobileMenu() {
   const {isClose} = useAppSelector(state => state.menuReducer);
