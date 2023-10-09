@@ -7,7 +7,7 @@ import styles from "./BtnFilter.module.css";
 
 export default function BtnFilter() {
   const dispatch = useAppDispatch();
-  const {toggle} = filterSlice.actions;
+  const toggle = filterSlice.actions.toggle;
   
   return (
     <button className={styles.filterBtn} onClick={() => dispatch(toggle())}>
