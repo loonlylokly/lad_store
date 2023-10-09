@@ -3,18 +3,22 @@ import { combineReducers, configureStore, getDefaultMiddleware } from "@reduxjs/
 import menuReducer from "./reducers/MenuSlice";
 import filterReducer from "./reducers/FilterSlice";
 import { productsApi } from "./api/productsApi";
+import { categoryApi } from "./api/categoryApi";
 
 
 const rootReducer = combineReducers({
   menuReducer,
   filterReducer,
-  [productsApi.reducerPath]: productsApi.reducer
+  [productsApi.reducerPath]: productsApi.reducer,
+  [categoryApi.reducerPath]: categoryApi.reducer
 })
 
 export const setupStore = () => {
   return configureStore({
     reducer: rootReducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(productsApi.middleware)
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware()
+                                          .concat(productsApi.middleware)
+                                          .concat(categoryApi.middleware)
   })
 }
 

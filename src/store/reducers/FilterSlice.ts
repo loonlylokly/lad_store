@@ -4,21 +4,21 @@ type filterPayload = {
   sort: string,
   availability: boolean,
   priceFrom: number,
-  priceTo: number  
+  priceTo: number
 }
 
-const defaultFilter = {
-  sort: 'saleDecr',
+let filter = {
+  sort: 'saleDesc',
   category: 'all',
   availability: true,
   priceFrom: 0,
   priceTo: 100000    
 };
 
-const filter = localStorage.getItem('filter') !== null ? 
-                JSON.parse(localStorage.getItem('filter') || '') :defaultFilter;
-                
-
+if (typeof localStorage !== 'undefined') {
+  filter = localStorage.getItem('filter') !== null ? 
+                  JSON.parse(localStorage.getItem('filter') || '') : filter;
+}
 const initialState = {
   isClose: true,
   filter: {
@@ -26,7 +26,7 @@ const initialState = {
     category: filter.category,
     availability: filter.availability,
     priceFrom: filter.priceFrom,
-    priceTo: filter.priceTo    
+    priceTo: filter.priceTo
   }
 }
 
@@ -42,6 +42,10 @@ export const filterSlice = createSlice({
       state.filter.sort = action.payload.sort;
       state.filter.priceFrom = action.payload.priceFrom;
       state.filter.priceTo = action.payload.priceTo;
+      localStorage.setItem('filter', JSON.stringify(state.filter));
+    },
+    changeCategory(state, action: PayloadAction<string>) {
+      state.filter.category = action.payload;
       localStorage.setItem('filter', JSON.stringify(state.filter));
     }
   }

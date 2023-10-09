@@ -13,7 +13,7 @@ type FormProps = {
 };
 
 export default function FilterForm() {
-  const isClose = useAppSelector(state => state.filterReducer.isClose);
+  const { isClose, filter } = useAppSelector(state => state.filterReducer);
   const changeFilters = filterSlice.actions.changeFilters;
   const dispatch = useAppDispatch();
 
@@ -31,7 +31,7 @@ export default function FilterForm() {
       className={`${styles.filterForm} ${isClose && styles.close}`}
       onSubmit={handleSubmit(onSubmitForm)}>
       <label htmlFor="sort-select">Сортировать</label>
-      <select id="sort-select" {...register("sort")}>
+      <select id="sort-select" defaultValue={filter.sort.toString()} {...register("sort")}>
         <option value="ordersDesc">Количество заказов</option>
         <option value="priceDesc">Сначала дорогие</option>
         <option value="priceAsc">Сначала недорогие</option>
@@ -43,7 +43,8 @@ export default function FilterForm() {
         id="priceFrom"
         type="number"
         inputMode="numeric"
-        defaultValue={0}
+        placeholder="0"
+        defaultValue={filter.priceFrom}
         min={0}
         max={100000}
         maxLength={4}
@@ -55,7 +56,8 @@ export default function FilterForm() {
         id="priceTo"
         type="number"
         inputMode="numeric"
-        defaultValue={100000}
+        placeholder="100000"
+        defaultValue={filter.priceTo}
         min={0}
         max={100000}
         required
@@ -66,7 +68,7 @@ export default function FilterForm() {
       <input
         type="checkbox"
         id="availability"
-        value="availability"
+        defaultValue="availability"
         {...register("availability")} />
       <button type="submit">Показать</button>
     </form>
