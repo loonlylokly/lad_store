@@ -11,7 +11,6 @@ import CategoryCardType from "@/types/CategoryCardType";
 export default function Filter() {
   const {data: category, isLoading} = categoryApi.useFetchAllCategoryQuery('');
   const list = category?.categories || [];
-  console.log(list);
   return (
     <>
       <div className={styles.filter}>

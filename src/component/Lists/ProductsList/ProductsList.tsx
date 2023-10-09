@@ -17,7 +17,6 @@ export default function ProductsList(props: Props) {
       <div>Loading...</div>
     )
   }
-  console.log(list);
 
   return (
     <div className={props.classNameList}>
