@@ -7,7 +7,7 @@
   --color-pink: 285 71% 55%;
   --color-grey: 240 8% 9%;
   --color-lilac: 263 52% 64%;
-  --color-titan: 247 100% 97%;
+  --color-titan: 247 100% 89%;
 
   --color-primary: hsl(var(--color-blue));
   --color-secondary: hsl(var(--color-pink));
@@ -101,4 +101,10 @@ section {
 
 .btnSecondary {
   transition: .4s;
+}
+
+.btnPrimary {
+  background-color: var(--color-primary);
+  color: var(--color-back-primary);
+  border: 3px solid var(--color-primary);
 }

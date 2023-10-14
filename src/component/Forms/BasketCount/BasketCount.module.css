@@ -1,0 +1,28 @@
+.wrapper {
+  padding-right: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.buttonMinus,
+.buttonPlus {
+  height: fit-content;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  border: none;
+  background-color: none;
+  border-radius: 30% 0 0 30%;
+  border: 1px solid var(--color-text-primary);
+}
+
+.buttonPlus {
+  border-radius: 0 30% 30% 0;
+}
+
+.count {
+  height: fit-content;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 4px 6px;
+}

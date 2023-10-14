@@ -1,9 +1,12 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import Header from '@/modules/Header/Header'
-import './globals.css'
-import Footer from '@/modules/Footer/Footer'
-import StoreProvider from '@/store/StoreProvider'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import Header from '@/modules/Header/Header';
+import Footer from '@/modules/Footer/Footer';
+import StoreProvider from '@/store/StoreProvider';
+import dynamic from 'next/dynamic';
+import './globals.css';
+
+const BtnBasket = dynamic(() => import('@/component/Buttons/BtnBasket/BtnBasket'), { ssr: false })
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +29,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <BtnBasket /> 
         </body>
       </StoreProvider>
     </html>

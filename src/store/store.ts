@@ -2,6 +2,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { combineReducers, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import menuReducer from "./reducers/MenuSlice";
 import filterReducer from "./reducers/FilterSlice";
+import basketReducer from "./reducers/BasketSlice";
 import { productsApi } from "./api/productsApi";
 import { categoryApi } from "./api/categoryApi";
 
@@ -9,6 +10,7 @@ import { categoryApi } from "./api/categoryApi";
 const rootReducer = combineReducers({
   menuReducer,
   filterReducer,
+  basketReducer,
   [productsApi.reducerPath]: productsApi.reducer,
   [categoryApi.reducerPath]: categoryApi.reducer
 })

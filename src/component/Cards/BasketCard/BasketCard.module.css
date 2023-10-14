@@ -1,0 +1,18 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  border: 1px solid var(--color-text-primary);
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+@media (width >= 1200px) {
+  .wrapper {
+    width: 70%;
+  }
+}
