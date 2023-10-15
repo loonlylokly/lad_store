@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import styles from "./ProductSlider.module.css";
 
@@ -9,7 +10,7 @@ export default function ProductSlider({images, name}: {images: string[], name: s
           return (
             <li key={index}>
               <a href={`#slide${index}`}>
-                <Image 
+                <img 
                   src={item}
                   alt={name}
                   width={80}
@@ -25,7 +26,7 @@ export default function ProductSlider({images, name}: {images: string[], name: s
         {images.map((item, index) => {
           return (
             <li key={index} id={`slide${index}`}>
-              <Image 
+              <img 
                 src={item}
                 alt={name}
                 width={280}

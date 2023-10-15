@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import BasketCount from "@/component/Forms/BasketCount/BasketCount";
 import Link from "next/link";
@@ -8,7 +9,7 @@ export default function BasketCard({card}: {card: ProductCardType}) {
   return (
     <div className={styles.wrapper}>
       <Link className={styles.card} href={`/product/${card.url}`}>
-        <Image 
+        <img 
           src={card.thubnail_url}
           alt={card.name}
           width={70}
