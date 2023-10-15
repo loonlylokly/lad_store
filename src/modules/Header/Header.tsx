@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Logo from "@/component/Icons/Logo/Logo";
 import DesktopMenu from "@/component/Menu/DesktopMenu/DesktopMenu";
 import Hamburger from "@/component/Buttons/Hamburger/Hamburger";
@@ -11,7 +10,7 @@ export default function Header() {
       <header className={styles.header}>
         <Logo />
         <DesktopMenu />
-        <Link className={`${styles.loginBtn} btn btnSecondary`} href="/">Войти</Link>
+        <a className={`${styles.loginBtn} btn btnSecondary`} href="/">Войти</a>
         <Hamburger />
       </header>
       <MobileMenu />

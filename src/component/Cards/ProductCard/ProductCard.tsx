@@ -1,6 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
-import Link from "next/link";
 import ProductCardType from '@/types/ProductCardType';
 import styles from "./ProductCard.module.css";
 import BtnAddProduct from "@/component/Buttons/BtnAddProduct/BtnAddProduct";
@@ -12,7 +10,7 @@ type Props = {
 export default function ProductCard({card}: Props) {
   return (
     <div className={styles.card}>
-      <Link href={`/product/${card.url}`}>
+      <a href={`/product/${card.url}`}>
         <img 
           className={styles.image}
           src={card.thubnail_url}
@@ -21,10 +19,10 @@ export default function ProductCard({card}: Props) {
           height={130}
           loading='lazy'
         />
-      </Link>
-      <Link href={`/product/${card.url}`}>
+      </a>
+      <a href={`/product/${card.url}`}>
         <p className={styles.name}>{card.name}</p>
-      </Link>
+      </a>
       <p className={styles.price}>{card.price}</p>
       <BtnAddProduct product={card} className={`${styles.button} btn btnSecondary`} text={"+"}/>
     </div>

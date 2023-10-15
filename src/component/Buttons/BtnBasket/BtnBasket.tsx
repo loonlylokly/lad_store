@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image";
-import Link from "next/link";
 import { useAppSelector } from "@/store/store";
 import styles from "./BtnBasket.module.css";
 
@@ -15,7 +14,7 @@ export default function BtnBasket() {
   }
 
   return (
-    <Link href="/basket" className={styles.button} aria-label="Корзина">
+    <a href="/basket" className={styles.button} aria-label="Корзина">
       <div className={styles.wrapper}>
         <Image 
           src="/icons/basket.svg"
@@ -25,6 +24,6 @@ export default function BtnBasket() {
           />
         <span className={styles.number}>{count}</span>
       </div>
-    </Link>
+    </a>
   )
 }

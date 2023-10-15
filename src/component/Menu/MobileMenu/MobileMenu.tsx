@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "@/store/store";
 import { menuSlice } from "@/store/reducers/MenuSlice";
 import styles from "./MobileMenu.module.css";
@@ -15,17 +14,17 @@ export default function MobileMenu() {
       <nav className={styles.menu}>
         <ul className={styles.list}>
           <li className={styles.item}>
-            <Link className={styles.link} href="/" onClick={() => dispatch(toggle())}>Главная</Link>
+            <a className={styles.link} href="/" onClick={() => dispatch(toggle())}>Главная</a>
           </li>
           <li className={styles.item}>
-            <Link className={styles.link} href="/catalog" onClick={() => dispatch(toggle())}>Каталог</Link>
+            <a className={styles.link} href="/catalog" onClick={() => dispatch(toggle())}>Каталог</a>
           </li>
           <li className={styles.item}>
-            <Link className={styles.link} href="/" onClick={() => dispatch(toggle())}>Контакты</Link>
+            <a className={styles.link} href="/" onClick={() => dispatch(toggle())}>Контакты</a>
           </li>
         </ul>
       </nav>
-      <Link className={`${styles.loginBtn} btn btnSecondary`} href="/">Войти</Link>
+      <a className={`${styles.loginBtn} btn btnSecondary`} href="/">Войти</a>
     </div>
   )
 }

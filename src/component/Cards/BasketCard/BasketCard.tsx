@@ -9,7 +9,7 @@ import styles from "./BasketCard.module.css";
 export default function BasketCard({card}: {card: ProductCardType}) {
   return (
     <div className={styles.wrapper}>
-      <Link className={styles.card} href={`/product/${card.url}`}>
+      <a className={styles.card} href={`/product/${card.url}`}>
         <img 
           src={card.thubnail_url}
           alt={card.name}
@@ -20,7 +20,7 @@ export default function BasketCard({card}: {card: ProductCardType}) {
           <h2>{card.name}</h2>
           <p>{card.description}</p>
         </div>
-      </Link>
+      </a>
       <BtnRemoveProduct className={`btn btnSecondary ${styles.btnRemove}`} product={card} text={"X"}/>
       <PriceProduct className={styles.price} card={card}/>
       <BasketCount idCard={card._id} name={card.name}/>
