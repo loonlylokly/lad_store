@@ -1,0 +1,20 @@
+.contacts__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  list-style: none;
+}
+
+.contacts__link {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  color: var(--color-back-primary);
+}
+
+.contacts__link:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}

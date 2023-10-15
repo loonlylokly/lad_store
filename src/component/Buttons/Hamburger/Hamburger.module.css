@@ -1,0 +1,11 @@
+.hamburger {
+  background-color: var(--color-back-primary);
+  border: none;
+  outline: none;
+}
+
+@media (width >= 540px) {
+  .hamburger {
+    display: none;
+  }
+}

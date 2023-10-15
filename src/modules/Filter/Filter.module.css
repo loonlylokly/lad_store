@@ -1,0 +1,13 @@
+.filter {
+  padding-bottom: 8px;
+  display: flex;
+}
+
+.filterList {
+  padding: 0px 2px 8px;
+  display: flex;
+  column-gap: 6px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: thin;
+}

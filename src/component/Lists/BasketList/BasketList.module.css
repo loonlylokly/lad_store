@@ -1,0 +1,10 @@
+.basketList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.totalPrice {
+  margin: 1.4rem 0;
+  font-size: 2.4rem;
+}

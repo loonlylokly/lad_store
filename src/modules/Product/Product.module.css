@@ -1,0 +1,23 @@
+.product {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  padding-block: 12px;
+  font-size: 3rem;
+}
+
+.price {
+  padding-bottom: 8px;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.button {
+  font-size: 1.6rem;
+}
+
+.description {
+  padding-block: 12px;
+}
