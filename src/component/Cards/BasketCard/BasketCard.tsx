@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
-import BasketCount from "@/component/Forms/BasketCount/BasketCount";
 import Link from "next/link";
+import BasketCount from "@/component/Forms/BasketCount/BasketCount";
+import BtnRemoveProduct from "@/component/Buttons/BtnRemoveProduct/BtnRemoveProduct";
+import PriceProduct from "@/component/Price/PriceProduct";
 import ProductCardType from "@/types/ProductCardType";
 import styles from "./BasketCard.module.css";
 
@@ -20,7 +21,9 @@ export default function BasketCard({card}: {card: ProductCardType}) {
           <p>{card.description}</p>
         </div>
       </Link>
-      <BasketCount url={card.url} name={card.name}/>
+      <BtnRemoveProduct className={`btn btnSecondary ${styles.btnRemove}`} product={card} text={"X"}/>
+      <PriceProduct className={styles.price} card={card}/>
+      <BasketCount idCard={card._id} name={card.name}/>
     </div>
   )
 }

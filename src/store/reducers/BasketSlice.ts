@@ -29,25 +29,40 @@ export const basketSlice = createSlice({
   reducers: {
     increase(state, action: PayloadAction<string>) {
       if (state.productCount[action.payload] !== undefined) {
-        state.productCount[action.payload] = state.productCount[action.payload] + 1;
+        if (state.productCount[action.payload] < 20) {
+          state.productCount[action.payload] += 1;
+        }
       } else {
         state.productCount[action.payload] = 1;
       }
+      
       localStorage.setItem('productCount', JSON.stringify(state.productCount));
     },
     decrease(state, action: PayloadAction<string>) {
       if (state.productCount[action.payload] !== undefined) {
-        state.productCount[action.payload] = state.productCount[action.payload] - 1;
+        if (state.productCount[action.payload] <= 1) {
+          delete state.productCount[action.payload]
+          state.productBasket.splice(
+            state.productBasket.findIndex(item => item._id === action.payload), 1);
+          state.count -= 1;
+          localStorage.setItem('productCount', JSON.stringify(state.productCount));
+          localStorage.setItem('productBasket', JSON.stringify(state.productBasket));
+          return;
+        } else {
+          state.productCount[action.payload] -= 1;
+        }
       } else {
         state.productCount[action.payload] = 1;
       }
       localStorage.setItem('productCount', JSON.stringify(state.productCount));
     },
     addProduct(state, action: PayloadAction<ProductCardType>) {
-      if (state.productCount[action.payload.url] !== undefined) {
-        state.productCount[action.payload.url] = state.productCount[action.payload.url] + 1;
+      if (state.productCount[action.payload._id] !== undefined) {
+        if (state.productCount[action.payload._id] < 20) {
+          state.productCount[action.payload._id] += 1;
+        }
       } else {
-        state.productCount[action.payload.url] = 1;
+        state.productCount[action.payload._id] = 1;
         state.productBasket.push(action.payload);
         state.count += 1;
       }
@@ -57,7 +72,7 @@ export const basketSlice = createSlice({
     removeProduct(state, action: PayloadAction<string>) {
       delete state.productCount[action.payload]
       state.productBasket.splice(
-        state.productBasket.findIndex(item => item.url === action.payload), 1);
+        state.productBasket.findIndex(item => item._id === action.payload), 1);
       state.count -= 1;
       localStorage.setItem('productCount', JSON.stringify(state.productCount));
       localStorage.setItem('productBasket', JSON.stringify(state.productBasket));

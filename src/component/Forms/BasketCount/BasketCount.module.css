@@ -1,5 +1,7 @@
 .wrapper {
+  order: 3;
   padding-right: 4px;
+  padding-bottom: 4px;
   display: flex;
   align-items: center;
 }

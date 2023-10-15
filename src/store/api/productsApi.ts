@@ -1,6 +1,5 @@
 import ProductCardType from "@/types/ProductCardType";
-import { EndpointBuilder } from "@reduxjs/toolkit/dist/query/endpointDefinitions";
-import {BaseQueryFn, EndpointDefinitions, FetchArgs, FetchBaseQueryError, FetchBaseQueryMeta, createApi, fetchBaseQuery} from "@reduxjs/toolkit/dist/query/react";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 
 type FilterProps = {
   sort: string;

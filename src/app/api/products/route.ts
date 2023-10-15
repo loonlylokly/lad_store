@@ -38,8 +38,7 @@ export async function GET(request: NextRequest) {
       'priceDesc': '-price',
       'saleDesc': '-sale',
     };
-
-    console.log(priceFrom)
+    
     const products = await Product.find()
       .where('categories')
       .in([...categories])
