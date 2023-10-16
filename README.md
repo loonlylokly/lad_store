@@ -9,6 +9,16 @@
 ### Установка
 
 ```bash
+git clone https://github.com/loonlylokly/lad_store.git
+```
+```bash
+cd lad_store
+```
+```bash
+echo "MONGODB_URL=<add link to mongodb>" > .env.local
+```
+Вместо "< add link to mongodb >" добавьте ссылку на свою монгодб с логином и паролем
+```bash
 npm install
 ```
 ```bash
