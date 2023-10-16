@@ -23,7 +23,7 @@ export async function GET(request: NextRequest) {
     const priceTo = parseInt(request.nextUrl.searchParams.get('priceTo') || '100000') || 100000;
     let sort = request.nextUrl.searchParams.get('sort') || 'saleDesc';
     let category = request.nextUrl.searchParams.get('category') || 'all';
-    const categoryList = ['clothes', 't-shirt'];
+    const categoryList = ['clothes', 't-shirt', 'sweatshirt', 'pen', 'dishes'];
     let categories;
     
     if (category === 'all') {
@@ -47,7 +47,7 @@ export async function GET(request: NextRequest) {
       .lte(priceTo)
       .sort(sortBy[sort] || '-sale')
       .skip(page * limit);
-
+      
     return NextResponse.json({products});
   } catch (error) {
     console.log(error);

@@ -21,11 +21,8 @@ export default function ProductsList(props: Props) {
   return (
     <div className={props.classNameList}>
       {list?.length === 0 && <div>Товары не найдены</div> }
-      {list && list.map((item, index) => {
-        if (item.categories.includes("clothes")){
-          return <ProductCard key={item._id} card={item} />;
-        }
-        return <></>
+      {list && list.map((item) => {
+        return <ProductCard key={item._id} card={item} />;
       })}
     </div>
   )
