@@ -2,7 +2,7 @@
 
 import { useAppSelector } from '@/store/store';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import styles from './FilterForm.module.css';
 
 type FormProps = {
@@ -15,12 +15,17 @@ type FormProps = {
 export default function FilterForm() {
   const { isClose, filter } = useAppSelector((state) => state.filterReducer);
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams);
 
   const { register, handleSubmit } = useForm<FormProps>();
 
   const onSubmitForm: SubmitHandler<FormProps> = (data) => {
-    console.log(data);
-    router.push('/catalog/?category=dishes');
+    let key: keyof typeof data;
+    for (key in data) {
+      params.set(key, data[key].toString());
+    }
+    router.push(`/catalog?${params.toString()}`);
   };
 
   return (
