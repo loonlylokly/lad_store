@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema } from 'mongoose';
 
 const productSchema = new Schema(
   {
@@ -7,17 +7,18 @@ const productSchema = new Schema(
     url: { type: String, required: true },
     thubnail_url: { type: String, required: true },
     images_urls: [String],
-    categories: {type: [String], required: true },
+    categories: { type: [String], required: true },
     availability: { type: Boolean, required: true },
     orders: { type: Number, required: true },
     price: { type: Number, required: true },
     sale: { type: Number },
   },
   {
-    timestamps: true
-  }
-)
+    timestamps: true,
+  },
+);
 
-const Product = mongoose.models.Product || mongoose.model("Product", productSchema);
+const Product =
+  mongoose.models.Product || mongoose.model('Product', productSchema);
 
 export default Product;

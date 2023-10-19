@@ -1,8 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
-import styles from "./ProductSlider.module.css";
+import styles from './ProductSlider.module.css';
 
-export default function ProductSlider({images, name}: {images: string[], name: string}) {
+export default function ProductSlider({
+  images,
+  name,
+}: {
+  images: string[];
+  name: string;
+}) {
   return (
     <div className={styles.container}>
       <ul className={styles.thumbnails}>
@@ -10,15 +15,10 @@ export default function ProductSlider({images, name}: {images: string[], name: s
           return (
             <li key={index}>
               <a href={`#slide${index}`}>
-                <img 
-                  src={item}
-                  alt={name}
-                  width={80}
-                  height={80}
-                />
+                <img src={item} alt={name} width={80} height={80} />
               </a>
             </li>
-          )
+          );
         })}
       </ul>
 
@@ -26,16 +26,11 @@ export default function ProductSlider({images, name}: {images: string[], name: s
         {images.map((item, index) => {
           return (
             <li key={index} id={`slide${index}`}>
-              <img 
-                src={item}
-                alt={name}
-                width={280}
-                height={280}
-              />
+              <img src={item} alt={name} width={280} height={280} />
             </li>
-          )
+          );
         })}
       </ul>
     </div>
-  )
+  );
 }

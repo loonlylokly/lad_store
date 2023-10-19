@@ -1,8 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isClose: true,
-}
+};
 
 export const menuSlice = createSlice({
   name: 'menu',
@@ -10,8 +10,8 @@ export const menuSlice = createSlice({
   reducers: {
     toggle(state) {
       state.isClose = !state.isClose;
-    }
-  }
+    },
+  },
 });
 
 export default menuSlice.reducer;

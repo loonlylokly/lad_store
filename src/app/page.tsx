@@ -1,6 +1,5 @@
-import Hero from "@/modules/Hero/Hero";
-import Categories from "@/modules/Categories/Categories";
-import styles from "./page.module.css";
+import Hero from '@/modules/Hero/Hero';
+import Categories from '@/modules/Categories/Categories';
 
 export default function Home() {
   return (
@@ -8,5 +7,5 @@ export default function Home() {
       <Hero />
       <Categories />
     </>
-  )
+  );
 }

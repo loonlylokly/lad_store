@@ -1,7 +1,7 @@
-import SocialList from "@/component/Lists/SocialList/SocialList";
-import Contacts from "@/component/Lists/Contacts/Contacts";
-import LogoFooter from "@/component/Icons/LogoFooter/LogoFooter";
-import styles from "./Footer.module.css";
+import SocialList from '@/component/Lists/SocialList/SocialList';
+import Contacts from '@/component/Lists/Contacts/Contacts';
+import LogoFooter from '@/component/Icons/LogoFooter/LogoFooter';
+import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
@@ -9,7 +9,7 @@ export default function Footer() {
       <div className={styles.about}>
         <LogoFooter />
       </div>
-      <hr className={styles.line}/>
+      <hr className={styles.line} />
       <div className={styles.contacts}>
         <Contacts />
       </div>
@@ -17,5 +17,5 @@ export default function Footer() {
         <SocialList />
       </div>
     </footer>
-  )
+  );
 }

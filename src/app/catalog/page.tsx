@@ -1,5 +1,5 @@
-import Category from "@/modules/Category/Category";
-import Filter from "@/modules/Filter/Filter";
+import Category from '@/modules/Category/Category';
+import Filter from '@/modules/Filter/Filter';
 
 export default function page() {
   return (
@@ -8,5 +8,5 @@ export default function page() {
       <h1>Каталог</h1>
       <Category />
     </section>
-  )
+  );
 }

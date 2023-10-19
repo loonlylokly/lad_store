@@ -1,9 +1,9 @@
-"use client"
+'use client';
 
-import { useAppDispatch, useAppSelector } from "@/store/store";
-import { SubmitHandler, useForm } from "react-hook-form";
-import styles from "./FilterForm.module.css";
-import { filterSlice } from "@/store/reducers/FilterSlice";
+import { useAppSelector } from '@/store/store';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { useRouter } from 'next/navigation';
+import styles from './FilterForm.module.css';
 
 type FormProps = {
   sort: string;
@@ -13,25 +13,27 @@ type FormProps = {
 };
 
 export default function FilterForm() {
-  const { isClose, filter } = useAppSelector(state => state.filterReducer);
-  const changeFilters = filterSlice.actions.changeFilters;
-  const dispatch = useAppDispatch();
+  const { isClose, filter } = useAppSelector((state) => state.filterReducer);
+  const router = useRouter();
 
-  const {
-    register,
-		handleSubmit,
-  } = useForm<FormProps>();
+  const { register, handleSubmit } = useForm<FormProps>();
 
   const onSubmitForm: SubmitHandler<FormProps> = (data) => {
-    dispatch(changeFilters(data));
-	}
+    console.log(data);
+    router.push('/catalog/?category=dishes');
+  };
 
   return (
     <form
       className={`${styles.filterForm} ${isClose && styles.close}`}
-      onSubmit={handleSubmit(onSubmitForm)}>
+      onSubmit={handleSubmit(onSubmitForm)}
+    >
       <label htmlFor="sort-select">Сортировать</label>
-      <select id="sort-select" defaultValue={filter.sort.toString()} {...register("sort")}>
+      <select
+        id="sort-select"
+        defaultValue={filter.sort.toString()}
+        {...register('sort')}
+      >
         <option value="ordersDesc">Количество заказов</option>
         <option value="priceDesc">Сначала дорогие</option>
         <option value="priceAsc">Сначала недорогие</option>
@@ -49,9 +51,10 @@ export default function FilterForm() {
         max={100000}
         maxLength={4}
         required
-        {...register("priceFrom", {
+        {...register('priceFrom', {
           valueAsNumber: true,
-        })} />
+        })}
+      />
       <input
         id="priceTo"
         type="number"
@@ -61,16 +64,18 @@ export default function FilterForm() {
         min={0}
         max={100000}
         required
-        {...register("priceTo", {
+        {...register('priceTo', {
           valueAsNumber: true,
-        })} />
+        })}
+      />
       <label htmlFor="availability">Наличие</label>
       <input
         type="checkbox"
         id="availability"
         defaultValue="availability"
-        {...register("availability")} />
+        {...register('availability')}
+      />
       <button type="submit">Показать</button>
     </form>
-  )
+  );
 }
